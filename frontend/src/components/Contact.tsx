@@ -551,9 +551,9 @@ export default function Contact() {
                           <span className="text-cyan-400">⚡</span>
                           <span>Auto Message</span>
                         </label>
-                        <span className="text-[10px] font-mono text-cyan-300/80">Click to auto-fill</span>
+                        {/* <span className="text-[10px] font-mono text-cyan-300/80">Click to auto-fill</span> */}
                       </div>
-                      <div className="flex flex-wrap gap-2">
+                      {/* <div className="flex flex-wrap gap-2">
                         {QUICK_TOPICS.map((topic) => (
                           <button
                             key={topic.id}
@@ -568,13 +568,13 @@ export default function Contact() {
                             <span>{topic.label}</span>
                           </button>
                         ))}
-                      </div>
+                      </div> */}
                     </div>
 
                     {/* Input: Your Name (STRICT VALIDATION: Alphabets and spaces only) */}
                     <div className="space-y-1.5">
                       <label className="text-xs font-medium text-slate-300 flex items-center justify-between">
-                        <span>Your Name (Alphabets only)</span>
+                        <span>Your Name</span>
                         {isNameValid ? (
                           <span className="text-[11px] text-emerald-400 font-mono flex items-center gap-1">
                             <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
