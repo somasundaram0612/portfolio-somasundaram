@@ -1,0 +1,47 @@
+# ================================
+# Python / Backend
+# ================================
+
+backend/vi/
+backend/.venv/
+backend/__pycache__/
+backend/**/__pycache__/
+*.py[cod]
+
+# ================================
+# Frontend
+# ================================
+
+frontend/node_modules/
+frontend/dist/
+
+# ================================
+# Environment Variables
+# ================================
+
+.env
+.env.*
+!.env.example
+
+# ================================
+# Database
+# ================================
+
+*.db
+*.sqlite
+*.sqlite3
+
+# ================================
+# Docker
+# ================================
+
+# Keep docker-compose.yml tracked
+
+# ================================
+# IDE / OS
+# ================================
+
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
