@@ -11,6 +11,8 @@ export const profile = {
   ],
   stats: [{ label: "Years of experience", value: "3+" }, { label: "Projects below", value: "6" }],
   email: "somasundaram822@gmail.com",
+  phone: "+919566987947",
+  phoneDisplay: "+91 95669 87947",
   location: "Chennai, India",
   links: { github: "https://github.com/somasundaram0612", linkedin: "https://www.linkedin.com/in/soma-sundaram-376254203" },
 };

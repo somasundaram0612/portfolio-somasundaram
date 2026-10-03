@@ -230,7 +230,7 @@ export default function TopNav() {
             </motion.a>
 
             {/* CV Resume Button */}
-            <motion.a
+            {/* <motion.a
               href={profile.resume}
               download="C SOMASUNDARAM.pdf"
               whileHover={{ scale: 1.04, y: -1 }}
@@ -239,7 +239,7 @@ export default function TopNav() {
               title="Download C SOMASUNDARAM Resume"
             >
               CV
-            </motion.a>
+            </motion.a> */}
 
             {/* Mobile Hamburger Toggle */}
             <button

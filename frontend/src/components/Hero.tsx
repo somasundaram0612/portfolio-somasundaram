@@ -163,7 +163,7 @@ export default function Hero() {
             </motion.a>
 
             {/* Resume Button */}
-            <motion.a
+            {/* <motion.a
               href={profile.resume}
               download="C SOMASUNDARAM.pdf"
               whileHover={{ scale: 1.02, y: -1 }}
@@ -177,7 +177,7 @@ export default function Hero() {
                 <line x1="12" x2="12" y1="15" y2="3" />
               </svg>
               <span>CV</span>
-            </motion.a>
+            </motion.a> */}
           </motion.div>
 
           {/* Social Links & Location Quick Bar */}
@@ -211,13 +211,13 @@ export default function Hero() {
                 </svg>
               </a>
               <a
-                href={`mailto:${profile.email}?subject=Hire%20Somasundaram%20C`}
-                className="h-8 w-8 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-400/50 flex items-center justify-center text-slate-300 hover:text-cyan-300 transition-all shadow-sm"
-                title="Send Email to Somasundaram C"
+                href={`tel:${profile.phone}`}
+                className="h-8 w-8 rounded-lg bg-white/5 hover:bg-emerald-500/15 border border-white/10 hover:border-emerald-400/50 flex items-center justify-center text-slate-300 hover:text-emerald-300 transition-all shadow-sm"
+                title={`Call Somasundaram C (${profile.phoneDisplay})`}
+                aria-label={`Call Somasundaram C at ${profile.phoneDisplay}`}
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect width="20" height="16" x="2" y="4" rx="2" />
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
               </a>
             </div>
