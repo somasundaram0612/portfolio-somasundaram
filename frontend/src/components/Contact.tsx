@@ -4,7 +4,7 @@ import { profile } from "../data/portfolio";
 import Section from "./Section";
 import Reveal from "./Reveal";
 
-const API = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
+const API = import.meta.env.VITE_API_URL ?? "https://portfolio-somasundaram.onrender.com";
 
 const QUICK_TOPICS = [
   { id: "hire", label: "💼 Hire Me", text: "Hi Somasundaram, we would like to discuss hiring you as a Python / Full Stack Developer for our engineering team." },
@@ -153,9 +153,12 @@ export default function Contact() {
       body: f.body.trim(),
     });
 
-    const endpoints = import.meta.env.VITE_API_URL
-      ? [import.meta.env.VITE_API_URL]
-      : ["http://localhost:8000", "http://127.0.0.1:8000"];
+    const endpoints = [
+      ...(import.meta.env.VITE_API_URL ? [import.meta.env.VITE_API_URL] : []),
+      "https://portfolio-somasundaram.onrender.com",
+      "http://localhost:8000",
+      "http://127.0.0.1:8000",
+    ];
 
     let success = false;
     for (const base of endpoints) {
@@ -378,7 +381,7 @@ export default function Contact() {
                   whileHover={{ y: -3, scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
                   className="group flex items-center justify-between rounded-2xl bg-panel/70 backdrop-blur-md border border-white/10 hover:border-pink-400/60 p-4 transition-all duration-300 hover:shadow-[0_0_25px_rgba(244,114,182,0.2)]"
-                  title="Download C SOMASUNDARAM Resume"
+                  title="Download C SOMASUNDARAM Resume (PDF)"
                 >
                   <div className="flex items-center gap-3.5">
                     <div className="h-11 w-11 rounded-xl bg-pink-500/10 border border-pink-400/30 flex items-center justify-center text-pink-300 group-hover:bg-pink-400 group-hover:text-void group-hover:shadow-[0_0_16px_#f472b6] transition-all duration-300">
@@ -389,16 +392,20 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <span className="text-xs uppercase tracking-wider text-slate-400 font-semibold">Verified Credentials</span>
-                      <p className="text-sm md:text-base font-medium text-slate-100 group-hover:text-pink-300 transition-colors">
-                        Download Full Resume
+                      <span className="text-xs uppercase tracking-wider text-slate-400 font-semibold flex items-center gap-1.5">
+                        Curriculum Vitae
+                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-pink-400"></span>
+                      </span>
+                      <p className="text-sm md:text-base font-semibold text-slate-100 group-hover:text-pink-300 transition-colors">
+                        Download Resume
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-pink-500/10 text-pink-300 border border-pink-500/20">
+                  <div className="flex items-center gap-2 text-xs font-mono text-slate-400 group-hover:text-pink-300 transition-colors">
+                    <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-pink-500/10 text-pink-300 border border-pink-500/30 font-medium">
                       PDF
                     </span>
+                    <span className="hidden sm:inline font-sans text-xs">Download</span>
                     <svg className="w-4 h-4 text-slate-400 group-hover:text-pink-300 transform group-hover:translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="7 10 12 15 17 10" />
                       <line x1="12" x2="12" y1="15" y2="3" />
@@ -689,8 +696,15 @@ export default function Contact() {
                           {!f.body && (
                             <button
                               type="button"
-                              // onClick={() => handleSelectTopic(QUICK_TOPICS[0])}
-                              className="text-[11px] font-mono text-cyan-300 hover:text-cyan-200  flex items-center gap-1 cursor-pointer"
+                              onClick={() => {
+                                setF((prev) => ({
+                                  ...prev,
+                                  body: "Hi Somasundaram, I reviewed your technical profile and would like to discuss an opportunity for a Python / Full Stack Developer role with our engineering team.",
+                                }));
+                                setBodyError(null);
+                              }}
+                              className="text-[11px] font-mono text-cyan-300 hover:text-cyan-200 flex items-center gap-1 cursor-pointer transition-colors"
+                              title="Click to insert a pre-written message template"
                             >
                               <span>⚡ Auto-fill template</span>
                             </button>

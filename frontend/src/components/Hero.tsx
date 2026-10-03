@@ -156,8 +156,8 @@ export default function Hero() {
               className="rounded-full bg-panel/80 hover:bg-white/10 border border-white/20 hover:border-cyan-300/60 px-6 py-3.5 text-slate-200 hover:text-cyan-300 font-medium transition-all backdrop-blur flex items-center gap-2"
             >
               <svg className="w-4 h-4 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect width="20" height="16" x="2" y="4" rx="2" />
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
               </svg>
               <span>Let's Connect</span>
             </motion.a>
