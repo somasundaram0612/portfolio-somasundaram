@@ -170,6 +170,11 @@ export default function Contact() {
         });
 
         if (response.ok) {
+          const data = await response.json();
+          // Check if the email was actually delivered, not just saved to DB
+          if (data.email_sent === false) {
+            console.warn(`Message saved at ${base} but email delivery failed`);
+          }
           success = true;
           break;
         }

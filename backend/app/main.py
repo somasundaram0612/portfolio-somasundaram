@@ -4,7 +4,7 @@ import logging
 from datetime import datetime
 from email.message import EmailMessage
 from dotenv import load_dotenv
-from fastapi import FastAPI, Depends, BackgroundTasks, HTTPException
+from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr, Field
 from sqlalchemy.orm import Session
@@ -101,16 +101,22 @@ def health():
     return {"status": "ok"}
 
 @app.post("/api/contact", status_code=201)
-def contact(data: ContactIn, background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
+def contact(data: ContactIn, db: Session = Depends(get_db)):
     # 1. Save to persistent database
     msg = models.Message(name=data.name, email=data.email, body=data.body)
     db.add(msg)
     db.commit()
 
-    # 2. Dispatch email delivery in background task
-    background_tasks.add_task(send_notification_email, data.name, data.email, data.body)
+    # 2. Send email synchronously so we can report the real result
+    email_sent = send_notification_email(data.name, data.email, data.body)
 
     return {
         "ok": True,
-        "message": "Message received and scheduled for delivery to somasundaram822@gmail.com",
+        "email_sent": email_sent,
+        "message": (
+            "Message received and delivered to somasundaram822@gmail.com"
+            if email_sent
+            else "Message saved. Email delivery will be retried — SMTP may be misconfigured."
+        ),
     }
+
