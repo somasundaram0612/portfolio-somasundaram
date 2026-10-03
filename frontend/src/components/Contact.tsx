@@ -374,11 +374,11 @@ export default function Contact() {
               <Reveal delay={0.28}>
                 <motion.a
                   href={profile.resume}
-                  download="SOMASUNDARAM C.pdf"
+                  download="C SOMASUNDARAM.pdf"
                   whileHover={{ y: -3, scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
                   className="group flex items-center justify-between rounded-2xl bg-panel/70 backdrop-blur-md border border-white/10 hover:border-pink-400/60 p-4 transition-all duration-300 hover:shadow-[0_0_25px_rgba(244,114,182,0.2)]"
-                  title="Download SOMASUNDARAM C Resume"
+                  title="Download C SOMASUNDARAM Resume"
                 >
                   <div className="flex items-center gap-3.5">
                     <div className="h-11 w-11 rounded-xl bg-pink-500/10 border border-pink-400/30 flex items-center justify-center text-pink-300 group-hover:bg-pink-400 group-hover:text-void group-hover:shadow-[0_0_16px_#f472b6] transition-all duration-300">

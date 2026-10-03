@@ -4,7 +4,7 @@ export const profile = {
   role: "Python Full Stack Developer",
   tagline: "Python backends and React frontends, built to ship.",
   photo: "/profile.jpg",
-  resume: "/SOMASUNDARAM C.pdf",
+  resume: "/C SOMASUNDARAM.pdf",
   about: [
     "I'm a Python full stack developer with 3+ years of experience building web apps with Django, FastAPI and React. I started with Django REST APIs and MySQL, and now work mostly on FastAPI backends with PostgreSQL and React/TypeScript frontends.",
     "I've worked on food delivery, e-commerce, learning management and travel platforms, including WhatsApp Cloud API messaging workflows. I focus on clean APIs, working authentication and role-based access, and apps that deploy cleanly with Docker and GitHub Actions.",
