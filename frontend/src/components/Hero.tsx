@@ -19,7 +19,6 @@ const HIGHLIGHTS = [
 ];
 
 export default function Hero() {
-  const R = 190; // orbit radius (px) for image side
   const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
@@ -242,20 +241,71 @@ export default function Hero() {
 
         </div>
 
-        {/* IMAGE SIDE (RIGHT) — KEPT COMPLETELY INTACT AS REQUESTED */}
-        <motion.div initial={{ opacity: 0, scale: 0.7 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.8, duration: 0.8 }}
-          className="relative mx-auto h-[300px] w-[300px] md:h-[440px] md:w-[440px] flex items-center justify-center scale-[.72] md:scale-100">
-          <div className="absolute inset-4 rounded-full border border-dashed border-violet-400/40 animate-orbit" />
-          <div className="absolute h-56 w-56 rounded-full bg-violet-500/30 blur-3xl animate-pulseGlow" />
-          <img src={profile.photo} alt={profile.name} className="relative h-56 w-56 rounded-full object-cover border-2 border-cyan-300/70 shadow-[0_0_40px_#22d3ee66]" />
-          <div className="absolute inset-0 animate-orbit">
+        {/* IMAGE SIDE (RIGHT) — High-Precision Cosmic Orbit & Photo Framing */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+          className="hero-orbit-container relative mx-auto flex items-center justify-center w-[320px] h-[320px] sm:w-[390px] sm:h-[390px] md:w-[460px] md:h-[460px] select-none"
+        >
+          {/* Cosmic Ambient Glow Backdrop */}
+          <div className="pointer-events-none absolute h-40 w-40 sm:h-52 sm:w-52 md:h-64 md:w-64 rounded-full bg-violet-600/25 blur-3xl animate-pulseGlow" />
+
+          {/* Faint Solid Orbit Track Line */}
+          <div
+            className="pointer-events-none absolute rounded-full border border-violet-400/20"
+            style={{
+              width: "calc(var(--orbit-radius) * 2)",
+              height: "calc(var(--orbit-radius) * 2)",
+            }}
+          />
+
+          {/* Precision Dashed Orbit Gyro Ring */}
+          <div
+            className="pointer-events-none absolute rounded-full border border-dashed border-cyan-400/40 animate-orbit"
+            style={{
+              width: "calc(var(--orbit-radius) * 2)",
+              height: "calc(var(--orbit-radius) * 2)",
+            }}
+          />
+
+          {/* Profile Picture with Cosmic Halo */}
+          <div className="relative z-10 rounded-full p-1 bg-gradient-to-tr from-cyan-400/50 via-violet-500/40 to-pink-500/50 shadow-[0_0_40px_rgba(34,211,238,0.4)]">
+            <img
+              src={profile.photo}
+              alt={profile.name}
+              className="h-36 w-36 sm:h-44 sm:w-44 md:h-56 md:w-56 rounded-full object-cover object-top border-2 border-cyan-300/80 shadow-[inset_0_0_20px_rgba(0,0,0,0.5)]"
+            />
+          </div>
+
+          {/* Orbiting Technical Skills Array — Mathematically Centered (0px Wobble / Zero Overlap) */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none animate-orbit">
             {orbit.map((o, i) => {
               const a = (360 / orbit.length) * i;
               return (
-                <div key={o.label} className="absolute left-1/2 top-1/2" style={{ transform: `rotate(${a}deg) translateX(${R}px) rotate(${-a}deg)` }}>
-                  <div className="animate-orbitRev"> {/* cancels the spin so text stays upright */}
-                    <span className="block -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-xl bg-panel px-3 py-1.5 text-xs font-medium"
-                      style={{ border: `1px solid ${o.color}`, boxShadow: `0 0 16px ${o.color}66` }}>{o.label}</span>
+                <div
+                  key={o.label}
+                  className="absolute top-1/2 left-1/2 w-0 h-0"
+                  style={{
+                    transform: `rotate(${a}deg) translateX(var(--orbit-radius)) rotate(${-a}deg)`,
+                  }}
+                >
+                  {/* Counter-rotation to keep chip upright at all angles with 0 0 origin */}
+                  <div
+                    className="w-0 h-0 animate-orbitRev pointer-events-auto"
+                    style={{ transformOrigin: "0 0" }}
+                  >
+                    <div className="absolute -translate-x-1/2 -translate-y-1/2">
+                      <span
+                        className="block whitespace-nowrap rounded-xl bg-panel/95 backdrop-blur-md px-2.5 py-1 sm:px-3 sm:py-1.5 text-[11px] sm:text-xs font-medium cursor-pointer shadow-lg transition-all duration-200 hover:scale-115 hover:border-cyan-300 select-none"
+                        style={{
+                          border: `1px solid ${o.color}`,
+                          boxShadow: `0 0 16px ${o.color}55`,
+                        }}
+                      >
+                        {o.label}
+                      </span>
+                    </div>
                   </div>
                 </div>
               );

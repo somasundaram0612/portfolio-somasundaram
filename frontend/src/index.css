@@ -8,4 +8,19 @@ body {
     radial-gradient(ellipse 40% 30% at 30% 95%, rgba(236,72,153,.15), transparent);
   background-attachment: fixed;
 }
+/* Responsive Orbit Radius for Hero Cosmic Orbit */
+.hero-orbit-container {
+  --orbit-radius: 135px;
+}
+@media (min-width: 640px) {
+  .hero-orbit-container {
+    --orbit-radius: 165px;
+  }
+}
+@media (min-width: 768px) {
+  .hero-orbit-container {
+    --orbit-radius: 200px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
