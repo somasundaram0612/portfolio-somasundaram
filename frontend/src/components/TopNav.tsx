@@ -232,11 +232,11 @@ export default function TopNav() {
             {/* CV Resume Button */}
             <motion.a
               href={profile.resume}
-              download
+              download="SOMASUNDARAM C.pdf"
               whileHover={{ scale: 1.04, y: -1 }}
               whileTap={{ scale: 0.97 }}
               className="hidden sm:inline-flex items-center justify-center rounded-full border border-white/20 hover:border-cyan-400/60 hover:text-cyan-300 hover:bg-white/5 px-3.5 py-1.5 text-xs font-mono text-slate-300 transition-all shadow-sm"
-              title="Download Resume CV"
+              title="Download SOMASUNDARAM C Resume"
             >
               CV
             </motion.a>
@@ -311,7 +311,7 @@ export default function TopNav() {
             <div className="pt-2 flex items-center justify-between border-t border-white/10 text-xs">
               <a
                 href={profile.resume}
-                download
+                download="SOMASUNDARAM C.pdf"
                 className="flex items-center gap-1.5 text-pink-300 hover:underline py-1"
               >
                 <span>Download CV</span>

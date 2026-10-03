@@ -166,11 +166,11 @@ export default function Hero() {
             {/* Resume Button */}
             <motion.a
               href={profile.resume}
-              download
+              download="SOMASUNDARAM C.pdf"
               whileHover={{ scale: 1.02, y: -1 }}
               whileTap={{ scale: 0.98 }}
               className="rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-pink-400/50 px-4 py-3.5 text-xs font-mono text-slate-300 hover:text-pink-300 transition-all flex items-center gap-1.5"
-              title="Download Resume"
+              title="Download SOMASUNDARAM C Resume"
             >
               <svg className="w-3.5 h-3.5 text-pink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -192,7 +192,7 @@ export default function Hero() {
               <a
                 href={profile.links.github}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="h-8 w-8 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-violet-400/50 flex items-center justify-center text-slate-300 hover:text-violet-300 transition-all shadow-sm"
                 title="GitHub Profile"
               >
@@ -203,7 +203,7 @@ export default function Hero() {
               <a
                 href={profile.links.linkedin}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="h-8 w-8 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/50 flex items-center justify-center text-slate-300 hover:text-blue-300 transition-all shadow-sm"
                 title="LinkedIn Profile"
               >

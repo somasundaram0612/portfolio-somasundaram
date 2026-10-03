@@ -411,7 +411,7 @@ export default function Projects() {
                         <a
                           href={p.github}
                           target="_blank"
-                          rel="noreferrer"
+                          rel="noopener noreferrer"
                           className="hover:text-white transition-colors underline underline-offset-4"
                         >
                           Code
@@ -421,7 +421,7 @@ export default function Projects() {
                         <a
                           href={p.live}
                           target="_blank"
-                          rel="noreferrer"
+                          rel="noopener noreferrer"
                           className="hover:text-white transition-colors underline underline-offset-4"
                         >
                           Live

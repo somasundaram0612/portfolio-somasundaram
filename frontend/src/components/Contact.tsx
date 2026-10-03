@@ -356,8 +356,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <span className="text-xs uppercase tracking-wider text-slate-400 font-semibold">Professional Network</span>
-                      <p className="text-sm md:text-base font-medium text-slate-100 group-hover:text-blue-300 transition-colors">
-                        LinkedIn Profile
+                      <p className="text-sm md:text-base font-medium text-slate-100 group-hover:text-blue-300 transition-colors truncate">
+                        linkedin.com/in/soma-sundaram-376254203
                       </p>
                     </div>
                   </div>
@@ -374,11 +374,11 @@ export default function Contact() {
               <Reveal delay={0.28}>
                 <motion.a
                   href={profile.resume}
-                  download
+                  download="SOMASUNDARAM C.pdf"
                   whileHover={{ y: -3, scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
                   className="group flex items-center justify-between rounded-2xl bg-panel/70 backdrop-blur-md border border-white/10 hover:border-pink-400/60 p-4 transition-all duration-300 hover:shadow-[0_0_25px_rgba(244,114,182,0.2)]"
-                  title="Download Somasundaram's Resume PDF"
+                  title="Download SOMASUNDARAM C Resume"
                 >
                   <div className="flex items-center gap-3.5">
                     <div className="h-11 w-11 rounded-xl bg-pink-500/10 border border-pink-400/30 flex items-center justify-center text-pink-300 group-hover:bg-pink-400 group-hover:text-void group-hover:shadow-[0_0_16px_#f472b6] transition-all duration-300">
@@ -551,9 +551,9 @@ export default function Contact() {
                           <span className="text-cyan-400">⚡</span>
                           <span>Auto Message</span>
                         </label>
-                        {/* <span className="text-[10px] font-mono text-cyan-300/80">Click to auto-fill</span> */}
+                        <span className="text-[10px] font-mono text-cyan-300/80">Click to auto-fill</span>
                       </div>
-                      {/* <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2">
                         {QUICK_TOPICS.map((topic) => (
                           <button
                             key={topic.id}
@@ -568,7 +568,7 @@ export default function Contact() {
                             <span>{topic.label}</span>
                           </button>
                         ))}
-                      </div> */}
+                      </div>
                     </div>
 
                     {/* Input: Your Name (STRICT VALIDATION: Alphabets and spaces only) */}
@@ -689,15 +689,15 @@ export default function Contact() {
                           {!f.body && (
                             <button
                               type="button"
-                              onClick={() => handleSelectTopic(QUICK_TOPICS[0])}
-                              className="text-[11px] font-mono text-cyan-300 hover:text-cyan-200 underline underline-offset-2 flex items-center gap-1 cursor-pointer"
+                              // onClick={() => handleSelectTopic(QUICK_TOPICS[0])}
+                              className="text-[11px] font-mono text-cyan-300 hover:text-cyan-200  flex items-center gap-1 cursor-pointer"
                             >
                               <span>⚡ Auto-fill template</span>
                             </button>
                           )}
-                          <span className={`font-mono text-[11px] ${f.body.length > 2800 ? "text-amber-400" : "text-slate-400"}`}>
+                          {/* <span className={`font-mono text-[11px] ${f.body.length > 2800 ? "text-amber-400" : "text-slate-400"}`}>
                             {f.body.length} / 3000
-                          </span>
+                          </span> */}
                         </div>
                       </div>
                       <div
